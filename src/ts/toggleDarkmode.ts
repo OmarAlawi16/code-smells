@@ -11,7 +11,7 @@ export function toggleLightMode (){
     
     else {
         toggleLightModeButton.innerHTML ='Välj ljust läge'
-    console.og('ljust läge')
+    console.log('ljust läge')
     }
     
 }
