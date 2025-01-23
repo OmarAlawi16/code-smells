@@ -1,19 +1,29 @@
-const toggleLightModeButton = document.querySelector('.toggle-btn');
-toggleLightModeButton.addEventListener('click', toggleLightMode);
-console.log(toggleLightModeButton);
+const toggleLightModeButton = document.querySelector<HTMLButtonElement>('#toggle-btn');
 
-export function toggleLightMode (){
-    document.body.classList.toggle('darkmode')
-    if (document.body.classList.contains('darkmode')){
-        toggleLightModeButton.innerHTML='Välj mörkt läge'
-        console.log('mörkt läge');
-    } 
-    
-    else {
-        toggleLightModeButton.innerHTML ='Välj ljust läge'
-    console.log('ljust läge')
-    }
-    
+// Helper function to toggle a class on the body
+function toggleBodyClass(className: string): boolean {
+    return document.body.classList.toggle(className);
 }
 
-export default toggleLightMode
+// Helper function to update the button's text
+function updateButtonText(button: HTMLButtonElement, isLightMode: boolean): void {
+    button.innerHTML = isLightMode ? 'Välj mörkt läge' : 'Välj ljust läge';
+}
+
+// Main function to toggle the theme
+export function toggleLightMode(): void {
+    if (!toggleLightModeButton) {
+        console.error('Toggle button not found!');
+        return;
+    }
+
+    const isLightMode = toggleBodyClass('lightmode');
+    updateButtonText(toggleLightModeButton, isLightMode);
+}
+
+// Attach event listener if button exists
+if (toggleLightModeButton) {
+    toggleLightModeButton.addEventListener('click', toggleLightMode);
+}
+
+export default toggleLightMode;
