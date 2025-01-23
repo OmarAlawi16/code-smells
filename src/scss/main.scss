@@ -61,7 +61,7 @@ a {
   }
 }
 
-.darkmode {
+.lightmode {
   background-color: $background-light;
   color: $color-dark;
 
@@ -73,6 +73,25 @@ a {
       color: $color-accent;
     }
   }
+}
+
+footer {
+  text-align: center;
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.source-link {
+  font-weight: bold;
+  color: #0077cc;
+  text-decoration: underline;
+}
+
+.year {
+  font-style: italic;
 }
 
 @media screen and (min-width: 1000px) {
