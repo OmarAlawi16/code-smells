@@ -83,7 +83,7 @@ G Requirements
 
 - [x] **Get the project running**: Debug and fix startup issues.
 - [x] **Convert CSS to Sass**: Transform all CSS files into Sass.
-- [ ] **Consistent naming in CSS**: Use consistent naming conventions for classes and IDs.
+- [x] **Consistent naming in CSS**: Use consistent naming conventions for classes and IDs.
 - [x] **Convert to TypeScript**: Migrate all JavaScript files to TypeScript for improved code quality.
 - [x] **Consistent code quality**: Ensure code standards are followed (using ESLint).
 - [ ] **Mobile view**: Adjust the layout for mobile users.
