@@ -1,8 +1,11 @@
+const PROGRAMS_API = import.meta.env.VITE_APP_PROGRAMS_API;
+const EPISODES_API = import.meta.env.VITE_APP_EPISODES_API;
+
 export async function getPodcasts() {
     try {
-        const response = await fetch('https://api.sr.se/api/v2/programs/index?programcategoryid=133&format=json&pagination=false&indent=true&filter=program.archived&filterValue=false');
+        const response = await fetch(`${PROGRAMS_API}?programcategoryid=133&format=json&pagination=false&indent=true&filter=program.archived&filterValue=false`);
         const json = await response.json();
-        console.log('API Response:', json); // Log API-answer for
+        console.log('API Response:', json);
         return json;
     } catch (error) {
         console.error('Something went wrong:', error);
@@ -10,12 +13,11 @@ export async function getPodcasts() {
     }
 }
 
-// Fetch an episode for a specific podcast.
 export async function getEpisodes(programId: number) {
     try {
-        const response = await fetch(`https://api.sr.se/api/v2/episodes/index?programid=${programId}&format=json&pagination=false`);
+        const response = await fetch(`${EPISODES_API}?programid=${programId}&format=json&pagination=false`);
         const json = await response.json();
-        console.log('Episodes Response:', json); // Log API-answer for episode
+        console.log('Episodes Response:', json);
         return json;
     } catch (error) {
         console.error('Something went wrong:', error);
