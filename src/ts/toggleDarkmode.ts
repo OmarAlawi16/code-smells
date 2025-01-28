@@ -5,9 +5,10 @@ function toggleBodyClass(className: string): boolean {
     return document.body.classList.toggle(className);
 }
 
-// Helper function to update the button's text
-function updateButtonText(button: HTMLButtonElement, isLightMode: boolean): void {
+// Helper function to update the button's text and aria-label
+function updateButtonTextAndAria(button: HTMLButtonElement, isLightMode: boolean): void {
     button.innerHTML = isLightMode ? 'Välj mörkt läge' : 'Välj ljust läge';
+    button.setAttribute('aria-label', isLightMode ? 'Växla till mörkt läge' : 'Växla till ljust läge');
 }
 
 // Main function to toggle the theme
@@ -18,7 +19,7 @@ export function toggleLightMode(): void {
     }
 
     const isLightMode = toggleBodyClass('lightmode');
-    updateButtonText(toggleLightModeButton, isLightMode);
+    updateButtonTextAndAria(toggleLightModeButton, isLightMode);
 }
 
 // Attach event listener if button exists

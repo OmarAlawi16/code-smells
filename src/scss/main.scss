@@ -2,7 +2,7 @@ $font-family: 'Source Sans Pro', sans-serif;
 $color-light: rgba(255, 255, 255, 0.87);
 $color-dark: #242424;
 $color-accent: rgb(85, 85, 218);
-$background-dark: #242424;
+$background-dark: darkslategray;
 $background-light: antiquewhite;
 
 body {
@@ -19,38 +19,6 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-.section__article-innerarticle {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 2rem;
-}
-
-.section__article-div {
-  display: inline-flex;
-  flex-direction: column;
-  margin-top: 0;
-  margin-left: 1rem;
-}
-
-img {
-  margin-top: 0.5rem;
-}
-
-h1 {
-  font-size: 40px;
-  text-align: center;
-}
-
-h2 {
-  font-size: 1.25rem;
-  margin: 0;
-}
-
-p {
-  font-size: 1rem;
-  margin: 0;
-}
-
 a {
   color: $color-light;
   cursor: pointer;
@@ -61,9 +29,20 @@ a {
   }
 }
 
+audio {
+  display: block;
+  visibility: visible;
+  pointer-events: auto;
+}
+
 .lightmode {
   background-color: $background-light;
   color: $color-dark;
+
+  button {
+    background-color: $background-dark;
+    color: $color-light;
+  }
 
   a {
     color: $color-dark;
@@ -75,7 +54,7 @@ a {
   }
 }
 
-footer {
+.footer__text {
   text-align: center;
 }
 
@@ -94,15 +73,83 @@ footer {
   font-style: italic;
 }
 
-@media screen and (min-width: 1000px) {
-  .section__podlist-pods {
+/* Podcast section styles */
+.section__podlist {
+  padding: 1rem;
+
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  &__list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    @media screen and (min-width: 1000px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (min-width: 1440px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  &__item {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__description {
+    font-size: 1rem;
+  }
+
+  &__link {
+    font-size: 0.9rem;
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+      color: lightgreen;
+    }
+  }
+
+  &__audio {
+    margin-top: 1rem;
+    width: 100%;
   }
 }
 
-@media screen and (min-width: 1440px) {
-  .section__podlist-pods {
-    grid-template-columns: 1fr 1fr 1fr;
+.footer__link {
+  font-size: 0.9rem;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    color: lightgreen;
   }
 }
