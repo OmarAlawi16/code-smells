@@ -1,7 +1,7 @@
 import { getPodcasts, getEpisodes } from './api';
 
 // Podcast list container
-const podCastContainer = document.querySelector('.section__podlist-pods') as HTMLElement;
+const podCastContainer = document.querySelector('.section__podlist__list') as HTMLElement;
 
 export async function createHtml() {
     try {
@@ -23,98 +23,100 @@ export async function createHtml() {
 
         // Iterate through each podcast and create HTML
         programs.forEach((podcast) => {
-            const innerArticle = createInnerArticle();
+            const podcastItem = createPodcastItem();
 
             // Add image
-            const imgElement = createImg(podcast.socialimage, podcast.name);
-            innerArticle.appendChild(imgElement);
+            const imgElement = createPodcastImage(podcast.socialimage, podcast.name);
+            podcastItem.appendChild(imgElement);
 
-            const textDiv = createTextDiv();
-            innerArticle.appendChild(textDiv);
+            // Add content container
+            const contentContainer = createContentContainer();
+            podcastItem.appendChild(contentContainer);
 
             // Add title and description
-            const header = createHeader(podcast.name);
-            textDiv.appendChild(header);
+            const title = createPodcastTitle(podcast.name);
+            contentContainer.appendChild(title);
 
-            const description = createDescription(podcast.description);
-            textDiv.appendChild(description);
+            // Add description
+            const description = createPodcastDescription(podcast.description);
+            contentContainer.appendChild(description);
 
-            podCastContainer.appendChild(innerArticle);
+            podCastContainer.appendChild(podcastItem);
 
             // Add link
-            const link = createLink(podcast.programurl);
-            textDiv.appendChild(link);
+            const link = createPodcastLink(podcast.programurl);
+            contentContainer.appendChild(link);
 
             // Fetch episodes for each podcast and add audio player
             getEpisodes(podcast.id).then((episodes: any) => {
                 if (episodes && episodes.episodes.length > 0) {
                     const audioUrl = episodes.episodes[0].listenpodfile.url;
-                    const audioPlayer = createAudioPlayer(audioUrl);
-                    textDiv.appendChild(audioPlayer);
+                    const audioPlayer = createPodcastAudioPlayer(audioUrl);
+                    contentContainer.appendChild(audioPlayer);
                 }
             }).catch((error) => {
                 console.error(`Error fetching episodes for podcast ${podcast.id}:`, error);
             });
-
         });
     } catch (error) {
         console.error('Error creating podcast HTML:', error);
     }
 }
 
-// Create an article for the podcast
-function createInnerArticle(): HTMLElement {
-    const innerArticle = document.createElement('article');
-    innerArticle.setAttribute('class', 'section__article-innerarticle');
-    innerArticle.setAttribute('tabindex', '1');
-    return innerArticle;
+// Create a podcast item
+function createPodcastItem(): HTMLElement {
+    const item = document.createElement('article');
+    item.classList.add('section__podlist__item');
+    return item;
 }
 
-// Create an image for the podcast
-function createImg(src: string, alt: string): HTMLImageElement {
+// Create a podcast image
+function createPodcastImage(src: string, alt: string): HTMLImageElement {
     const img = document.createElement('img');
     img.setAttribute('src', src);
     img.setAttribute('alt', alt);
     img.setAttribute('loading', 'lazy');
-    img.setAttribute('min-width', '100');
-    img.setAttribute('height', '100');
+    img.classList.add('section__podlist__image');
     return img;
 }
 
-// Create a div for text
-function createTextDiv(): HTMLDivElement {
-    const textDiv = document.createElement('div');
-    textDiv.setAttribute('class', 'section__article-div');
-    return textDiv;
+// Create a content container
+function createContentContainer(): HTMLDivElement {
+    const contentDiv = document.createElement('div');
+    contentDiv.classList.add('section__podlist__content');
+    return contentDiv;
 }
 
-// Create a header
-function createHeader(name: string): HTMLHeadingElement {
+// Create a podcast title
+function createPodcastTitle(title: string): HTMLHeadingElement {
     const header = document.createElement('h2');
-    header.textContent = name;
+    header.textContent = title;
+    header.classList.add('section__podlist__title');
     return header;
 }
 
-// Create a description
-function createDescription(description: string): HTMLParagraphElement {
+// Create a podcast description
+function createPodcastDescription(description: string): HTMLParagraphElement {
     const paragraph = document.createElement('p');
     paragraph.textContent = description;
+    paragraph.classList.add('section__podlist__description');
     return paragraph;
 }
 
-// Create an audio player
-function createAudioPlayer(url: string): HTMLAudioElement {
+// Create a podcast audio player
+function createPodcastAudioPlayer(url: string): HTMLAudioElement {
     const audio = document.createElement('audio');
     audio.setAttribute('controls', 'controls');
     audio.setAttribute('src', url);
+    audio.classList.add('section__podlist__audio');
     return audio;
 }
 
-// Create a link to the podcast page
-function createLink(url: string): HTMLAnchorElement {
+// Create a podcast link
+function createPodcastLink(url: string): HTMLAnchorElement {
     const link = document.createElement('a');
     link.setAttribute('href', url);
-    link.setAttribute('tabindex', '1');
+    link.classList.add('section__podlist__link');
     link.textContent = 'Podcastsidan';
     return link;
 }
