@@ -4,6 +4,24 @@ import { logMessage, logError } from './helpers';
 // Podcast list container
 const podCastContainer = document.querySelector('.section__podlist__list') as HTMLElement;
 
+/**
+ * Function to display an error message on the page
+ * @param message - The error message to display
+ */
+function displayErrorMessage(message: string): void {
+    const errorContainer = document.createElement('div');
+    errorContainer.classList.add('error-message');
+    errorContainer.textContent = message;
+
+    if (podCastContainer) {
+        podCastContainer.innerHTML = ''; // Clear existing content
+        podCastContainer.appendChild(errorContainer);
+    }
+}
+
+/**
+ * Function to fetch podcasts and render them in the DOM
+ */
 export async function createHtml() {
     try {
         // Logs when podcast fetching starts in DEV mode
@@ -14,6 +32,7 @@ export async function createHtml() {
         if (!podCasts) {
             // Logs an error if podcast fetching fails
             logError('Failed to fetch podcasts.');
+            displayErrorMessage('Failed to load podcasts. Please try again later.');
             return;
         }
 
@@ -70,6 +89,7 @@ export async function createHtml() {
     } catch (error) {
         // Logs an error if something goes wrong in the HTML creation process
         logError('Error creating podcast HTML:', error);
+        displayErrorMessage('An unexpected error occurred. Please refresh the page.');
     }
 }
 
