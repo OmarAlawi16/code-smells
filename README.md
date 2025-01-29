@@ -101,7 +101,7 @@ G Requirements
 - [x] **Consistent code quality**: Ensure code standards are followed (using ESLint).
 - [x] **Mobile view**: Adjust the layout for mobile users.
 - [x] **Language**: Fix language-related issues (e.g., lang attribute in HTML).
-- [ ] **Remove unnecessary logging**: Eliminate redundant console logs.
+- [x] **Remove unnecessary logging**: Eliminate redundant console logs.
 - [x] **Documentation**: Complete the README file and include screenshots.
 - [x] **Accessibility (images)**: Add alt-text and optimize images for better accessibility.
 - [x] **Refactor functions**: Improve code structure by breaking down complex logic.
@@ -111,7 +111,7 @@ G Requirements
 VG Requirements
 
 - [x] **Right code in the right place**: Restructure files and folders to follow best practices.
-- [ ] **Handle logging effectively**: Implement a logging system to collect and filter logs efficiently.
+- [x] **Handle logging effectively**: Implement a logging system to collect and filter logs efficiently.
 - [x] **Conduct an accessibility review of the site**: Analyze the site using tools like Lighthouse and WCAG standards.
 - [x] **Utilize Sass features in CSS**: Leverage mixins, variables, and inheritance for optimized styling.
 - [ ] **Remove unused packages**: Eliminate unnecessary dependencies from package.json.
