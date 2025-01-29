@@ -12,6 +12,7 @@ This project is a web-based podcast application developed at Wundermålig AB. Th
 - **TypeScript and Sass**: Modern technologies for scalable and maintainable code.
 
 ## Screenshots
+<img width="880" alt="page" src="https://github.com/user-attachments/assets/96cd0ba6-0a2c-403a-bda1-11d34c8f2a4d" />
 
 
 ## Technologies Used
