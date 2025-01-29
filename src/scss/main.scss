@@ -1,4 +1,13 @@
 // ----------------------------------------
+// Normalize CSS
+// ----------------------------------------
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// ----------------------------------------
 // Variables
 // ----------------------------------------
 $font-family: 'Source Sans Pro', sans-serif;
@@ -26,15 +35,22 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
 button {
-  width: 150px;
-  height: 50px;
+  width: 100px;
+  height: 30px;
   border-radius: 25px;
 }
 
 h1 {
-  font-size: 9rem;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-align: center;
 }
 
 a {
@@ -78,6 +94,7 @@ audio {
 .footer {
   &__text {
     text-align: center;
+    margin-bottom: 1rem;
   }
 
   &__link {
@@ -124,7 +141,7 @@ audio {
 
   &__title {
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
   }
 
