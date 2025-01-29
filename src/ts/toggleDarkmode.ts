@@ -1,3 +1,5 @@
+import { logMessage, logError } from './helpers';
+
 const toggleLightModeButton = document.querySelector<HTMLButtonElement>('#toggle-btn');
 
 // Helper function to toggle a class on the body
@@ -14,12 +16,16 @@ function updateButtonTextAndAria(button: HTMLButtonElement, isLightMode: boolean
 // Main function to toggle the theme
 export function toggleLightMode(): void {
     if (!toggleLightModeButton) {
-        console.error('Toggle button not found!');
+        // Logs an error in production mode if the button is missing
+        logError('Toggle button not found!');
         return;
     }
 
     const isLightMode = toggleBodyClass('lightmode');
     updateButtonTextAndAria(toggleLightModeButton, isLightMode);
+
+    // Logs the theme change in development mode
+    logMessage('Theme toggled:', isLightMode ? 'Light Mode' : 'Dark Mode');
 }
 
 // Attach event listener if button exists
