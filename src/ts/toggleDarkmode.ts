@@ -9,7 +9,7 @@ function toggleBodyClass(className: string): boolean {
 
 // Helper function to update the button's text and aria-label
 function updateButtonTextAndAria(button: HTMLButtonElement, isLightMode: boolean): void {
-    button.innerHTML = isLightMode ? 'Välj mörkt läge' : 'Välj ljust läge';
+    button.innerHTML = isLightMode ? '🌙' : '🌞';
     button.setAttribute('aria-label', isLightMode ? 'Växla till mörkt läge' : 'Växla till ljust läge');
 }
 
