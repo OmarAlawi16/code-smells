@@ -101,6 +101,13 @@ audio {
   font-style: italic;
 }
 
+.error-message {
+  color: red;
+  font-size: 1.2rem;
+  text-align: center !important;
+  margin-top: 2rem;
+}
+
 // ----------------------------------------
 // Section: Podcast List
 // ----------------------------------------
@@ -171,4 +178,4 @@ audio {
     margin-top: 1rem;
     width: 100%;
   }
-}
+} 
