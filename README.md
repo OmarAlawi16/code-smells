@@ -11,6 +11,9 @@ This project is a web-based podcast application developed at Wundermålig AB. Th
 - **Accessibility-first**: Built to ensure compatibility with screen readers and keyboard navigation.
 - **TypeScript and Sass**: Modern technologies for scalable and maintainable code.
 
+## Screenshots
+
+
 ## Technologies Used
 
 ### Build Tools
@@ -120,8 +123,6 @@ VG Requirements
 - [x] **Review development environment**: Document or visualize how the development environment is configured.
 - [x] **Ensure consistent CSS syntax**: Standardize syntax and formatting based on specific guidelines (e.g., BEM methodology).
 - [x] **Publish the site on GitHub Pages**: Build and deploy the site using GitHub Pages.
-
-## Screenshots
 
 ## License
 
