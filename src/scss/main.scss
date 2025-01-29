@@ -1,10 +1,17 @@
+// ----------------------------------------
+// Variables
+// ----------------------------------------
 $font-family: 'Source Sans Pro', sans-serif;
 $color-light: rgba(255, 255, 255, 0.87);
 $color-dark: #242424;
 $color-accent: rgb(85, 85, 218);
 $background-dark: darkslategray;
 $background-light: antiquewhite;
+$link-color: darkblue;
 
+// ----------------------------------------
+// General Styles
+// ----------------------------------------
 body {
   font-family: $font-family;
   line-height: 1.5;
@@ -17,6 +24,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+button {
+  height: 50px;
+  width: 150px;
+  border-radius: 25px;
+}
+
+h1 {
+  font-size: 9rem;
+  margin-bottom: 1rem;
 }
 
 a {
@@ -69,11 +87,23 @@ audio {
   text-decoration: underline;
 }
 
+.footer__link {
+  font-size: 0.9rem;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    color: $link-color;
+  }
+}
+
 .year {
   font-style: italic;
 }
 
-/* Podcast section styles */
+// ----------------------------------------
+// Section: Podcast List
+// ----------------------------------------
 .section__podlist {
   padding: 1rem;
 
@@ -88,12 +118,16 @@ audio {
     grid-template-columns: 1fr;
     gap: 1rem;
 
-    @media screen and (min-width: 1000px) {
+    @media screen and (min-width: 768px) {
       grid-template-columns: 1fr 1fr;
     }
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1024px) {
       grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media screen and (min-width: 1440px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
   }
 
@@ -119,11 +153,6 @@ audio {
     gap: 0.5rem;
   }
 
-  &__title {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-
   &__description {
     font-size: 1rem;
   }
@@ -134,22 +163,12 @@ audio {
 
     &:hover,
     &:active {
-      color: lightgreen;
+      color: $link-color;
     }
   }
 
   &__audio {
     margin-top: 1rem;
     width: 100%;
-  }
-}
-
-.footer__link {
-  font-size: 0.9rem;
-  text-decoration: none;
-
-  &:hover,
-  &:active {
-    color: lightgreen;
   }
 }
