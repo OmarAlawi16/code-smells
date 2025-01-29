@@ -76,6 +76,8 @@ function createPodcastImage(src: string, alt: string): HTMLImageElement {
     img.setAttribute('src', src);
     img.setAttribute('alt', alt);
     img.setAttribute('loading', 'lazy');
+    img.setAttribute('width', '200');
+    img.setAttribute('height', '200');
     img.classList.add('section__podlist__image');
     return img;
 }
