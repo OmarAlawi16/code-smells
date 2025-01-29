@@ -118,10 +118,10 @@ VG Requirements
 - [x] **Handle logging effectively**: Implement a logging system to collect and filter logs efficiently.
 - [x] **Conduct an accessibility review of the site**: Analyze the site using tools like Lighthouse and WCAG standards.
 - [x] **Utilize Sass features in CSS**: Leverage mixins, variables, and inheritance for optimized styling.
-- [ ] **Remove unused packages**: Eliminate unnecessary dependencies from package.json.
+- [x] **Remove unused packages**: Eliminate unnecessary dependencies from package.json.
 - [x] **Handle API errors**: Implement robust error handling for all API calls.
 - [x] **Conduct a Lighthouse analysis**: Run a Lighthouse report and improve performance, SEO, and accessibility.
-- [x] **Review development environment**: Document or visualize how the development environment is configured.
+- [ ] **Review development environment**: Document or visualize how the development environment is configured.
 - [x] **Ensure consistent CSS syntax**: Standardize syntax and formatting based on specific guidelines (e.g., BEM methodology).
 - [x] **Publish the site on GitHub Pages**: Build and deploy the site using GitHub Pages.
 
