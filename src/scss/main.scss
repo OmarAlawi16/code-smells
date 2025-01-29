@@ -43,9 +43,37 @@ header {
 }
 
 button {
-  width: 100px;
+  font-size: 1rem;
+  width: 50px;
   height: 30px;
   border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: $color-light;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: darkgray;
+  }
+
+  &:focus-visible {
+    outline-offset: 4px;
+  }
+}
+
+.lightmode button {
+  background-color: $background-dark;
+
+  &:hover {
+    background-color: darkgreen;
+  }
+
+  &:focus-visible {
+    outline-offset: 4px;
+  }
 }
 
 h1 {
