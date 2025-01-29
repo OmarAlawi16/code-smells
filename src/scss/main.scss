@@ -14,21 +14,21 @@ $link-color: darkblue;
 // ----------------------------------------
 body {
   font-family: $font-family;
-  line-height: 1.5;
   font-weight: 400;
+  line-height: 1.5;
   color-scheme: light dark;
   color: $color-light;
   background-color: $background-dark;
-  font-synthesis: none;
   text-rendering: optimizeLegibility;
+  font-synthesis: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
 
 button {
-  height: 50px;
   width: 150px;
+  height: 50px;
   border-radius: 25px;
 }
 
@@ -41,16 +41,16 @@ a {
   color: $color-light;
   cursor: pointer;
 
-  &:active,
-  &:hover {
+  &:hover,
+  &:active {
     color: $color-accent;
   }
 }
 
 audio {
   display: block;
-  visibility: visible;
   pointer-events: auto;
+  visibility: visible;
 }
 
 .lightmode {
@@ -65,15 +65,30 @@ audio {
   a {
     color: $color-dark;
 
-    &:active,
-    &:hover {
+    &:hover,
+    &:active {
       color: $color-accent;
     }
   }
 }
 
-.footer__text {
-  text-align: center;
+// ----------------------------------------
+// Footer
+// ----------------------------------------
+.footer {
+  &__text {
+    text-align: center;
+  }
+
+  &__link {
+    font-size: 0.9rem;
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+      color: $link-color;
+    }
+  }
 }
 
 .copyright {
@@ -87,24 +102,17 @@ audio {
   text-decoration: underline;
 }
 
-.footer__link {
-  font-size: 0.9rem;
-  text-decoration: none;
-
-  &:hover,
-  &:active {
-    color: $link-color;
-  }
-}
-
 .year {
   font-style: italic;
 }
 
+// ----------------------------------------
+// Error Messages
+// ----------------------------------------
 .error-message {
   color: red;
   font-size: 1.2rem;
-  text-align: center !important;
+  text-align: center;
   margin-top: 2rem;
 }
 
@@ -139,19 +147,19 @@ audio {
   }
 
   &__item {
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
   }
 
   &__image {
     width: 100%;
     height: auto;
-    border-radius: 8px;
     object-fit: cover;
+    border-radius: 8px;
   }
 
   &__content {
@@ -175,7 +183,7 @@ audio {
   }
 
   &__audio {
-    margin-top: 1rem;
     width: 100%;
+    margin-top: 1rem;
   }
-} 
+}
