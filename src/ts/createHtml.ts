@@ -25,19 +25,16 @@ function displayErrorMessage(message: string): void {
  */
 export async function createHtml() {
     try {
-        // Logs when podcast fetching starts in DEV mode
         logMessage('Fetching podcasts...');
 
-        // Fetch all podcasts
         const podCasts = await getPodcasts();
         if (!podCasts) {
-            // Logs an error if podcast fetching fails
             logError('Failed to fetch podcasts.');
             displayErrorMessage('Failed to load podcasts. Please try again later.');
             return;
         }
 
-        // Define the structure for podcast data
+        // Specify inline type for programs
         const programs: {
             programurl: string;
             socialimage: string;
@@ -46,11 +43,11 @@ export async function createHtml() {
             id: number;
         }[] = podCasts.programs;
 
-        // Iterate through each podcast and create HTML elements
+        // Iterate through each podcast and create HTML
         programs.forEach((podcast) => {
             const podcastItem = createPodcastItem();
 
-            // Add podcast image
+            // Add image
             const imgElement = createPodcastImage(podcast.socialimage, podcast.name);
             podcastItem.appendChild(imgElement);
 
@@ -58,7 +55,7 @@ export async function createHtml() {
             const contentContainer = createContentContainer();
             podcastItem.appendChild(contentContainer);
 
-            // Add podcast title
+            // Add title and description
             const title = createPodcastTitle(podcast.name);
             contentContainer.appendChild(title);
 
@@ -68,11 +65,11 @@ export async function createHtml() {
 
             podCastContainer.appendChild(podcastItem);
 
-            // Add podcast link
+            // Add link
             const link = createPodcastLink(podcast.programurl);
             contentContainer.appendChild(link);
 
-            // Fetch episodes and add an audio player
+            // Fetch episodes for each podcast and add audio player
             getEpisodes(podcast.id).then((episodes: any) => {
                 if (episodes && episodes.episodes.length > 0) {
                     const audioUrl = episodes.episodes[0].listenpodfile.url;
@@ -80,28 +77,23 @@ export async function createHtml() {
                     contentContainer.appendChild(audioPlayer);
                 }
             }).catch((error) => {
-                // Logs an error if episode fetching fails
                 logError(`Error fetching episodes for podcast ${podcast.id}:`, error);
             });
         });
-
-        // Logs when all podcast items have been added in DEV mode
-        logMessage('Podcast list successfully generated.');
     } catch (error) {
-        // Logs an error if something goes wrong in the HTML creation process
         logError('Error creating podcast HTML:', error);
         displayErrorMessage('An unexpected error occurred. Please refresh the page.');
     }
 }
 
-// Create a podcast item container
+// Create a podcast item
 function createPodcastItem(): HTMLElement {
     const item = document.createElement('article');
     item.classList.add('section__podlist__item');
     return item;
 }
 
-// Creates an image element for the podcast
+// Create a podcast image
 function createPodcastImage(src: string, alt: string): HTMLImageElement {
     const img = document.createElement('img');
     img.setAttribute('src', src);
@@ -113,14 +105,14 @@ function createPodcastImage(src: string, alt: string): HTMLImageElement {
     return img;
 }
 
-// Creates a content container for podcast details
+// Create a content container
 function createContentContainer(): HTMLDivElement {
     const contentDiv = document.createElement('div');
     contentDiv.classList.add('section__podlist__content');
     return contentDiv;
 }
 
-// Creates a podcast title element
+// Create a podcast title
 function createPodcastTitle(title: string): HTMLHeadingElement {
     const header = document.createElement('h2');
     header.textContent = title;
@@ -128,7 +120,7 @@ function createPodcastTitle(title: string): HTMLHeadingElement {
     return header;
 }
 
-// Creates a podcast description paragraph
+// Create a podcast description
 function createPodcastDescription(description: string): HTMLParagraphElement {
     const paragraph = document.createElement('p');
     paragraph.textContent = description;
@@ -136,7 +128,7 @@ function createPodcastDescription(description: string): HTMLParagraphElement {
     return paragraph;
 }
 
-// Creates an audio player for the podcast
+// Create a podcast audio player
 function createPodcastAudioPlayer(url: string): HTMLAudioElement {
     const audio = document.createElement('audio');
     audio.setAttribute('controls', 'controls');
@@ -145,7 +137,7 @@ function createPodcastAudioPlayer(url: string): HTMLAudioElement {
     return audio;
 }
 
-// Creates a link to the podcast's official page
+// Create a podcast link
 function createPodcastLink(url: string): HTMLAnchorElement {
     const link = document.createElement('a');
     link.setAttribute('href', url);
