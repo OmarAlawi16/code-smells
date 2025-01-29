@@ -171,7 +171,7 @@ audio {
     padding: 1rem;
     border: 1px solid #ccc;
     border-radius: 8px;
-    height: 100%; // Gör så att hela item tar upp tillgängligt utrymme
+    height: 100%;
   }
 
   &__image {
@@ -182,7 +182,7 @@ audio {
   }
 
   &__content {
-    flex-grow: 1; // Trycker ner audio-spelaren om innehållet är kortare
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -205,6 +205,6 @@ audio {
   &__audio {
     width: 100%;
     margin-top: 1rem;
-    margin-top: auto; // Trycker ner audioplayern till botten
+    margin-top: auto;
   }
 }
