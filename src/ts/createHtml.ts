@@ -14,7 +14,8 @@ function displayErrorMessage(message: string): void {
     errorContainer.textContent = message;
 
     if (podCastContainer) {
-        podCastContainer.innerHTML = ''; // Clear existing content
+        // Clear existing content and display the error message
+        podCastContainer.innerHTML = '';
         podCastContainer.appendChild(errorContainer);
     }
 }
