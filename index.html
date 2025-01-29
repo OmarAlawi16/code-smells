@@ -11,20 +11,22 @@
 </head>
 
 <body>
-  <section class="section__podlist">
+
+  <!-- Header -->
+  <header>
     <!-- Theme toggle button -->
     <button id="toggle-btn" class="section__podlist__toggle">Välj ljust läge</button>
+  </header>
 
-    <!-- Section title -->
-    <h1 class="section__podlist__title">SRs Humorprogram</h1>
-
-    <!-- Podcast list -->
-    <div class="section__podlist__list">
-      <!-- Podcast items will be dynamically added here via JavaScript -->
-    </div>
-  </section>
-
-  <script type="module" src="/main.ts"></script>
+  <!-- Main content -->
+  <main>
+    <section class="section__podlist">
+      <h1 class="section__podlist__title">SRs Humorprogram</h1>
+      <div class="section__podlist__list">
+        <!-- Podcast items will be dynamically added here via JavaScript -->
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer>
@@ -34,6 +36,8 @@
       <span id="current-year"></span>. Alla rättigheter förbehålles.
     </p>
   </footer>
+
+  <script type="module" src="/main.ts"></script>
 </body>
 
 </html>

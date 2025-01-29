@@ -1,7 +1,3 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
-import pluginVue from "eslint-plugin-vue";
 import stylistic from "@stylistic/eslint-plugin";
 import stylisticTs from "@stylistic/eslint-plugin-ts";
 
@@ -91,22 +87,6 @@ export default [
       "no-undef": "error",
       "no-unreachable": "warn",
       "no-unused-vars": "warn",
-    },
-  },
-  {
-    languageOptions: {
-      globals: globals.browser,
-    },
-  },
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
-  ...pluginVue.configs["flat/essential"],
-  {
-    files: ["**/*.vue"],
-    languageOptions: {
-      parserOptions: {
-        parser: tseslint.parser,
-      },
     },
   },
 ];

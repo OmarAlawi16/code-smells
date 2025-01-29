@@ -77,6 +77,19 @@ npm run dev
 npm run build
 ```
 
+### Environment Variables
+
+This project uses environment variables to store API URLs. The actual API URLs are **not** included in this repository for security reasons.
+
+#### **Setup Instructions**
+
+1. **Create a `.env` file** in the project root (or copy `.env.example` and rename it to `.env`).
+2. **Add the required environment variables**:
+   ```plaintext
+   VITE_PROGRAMS_API=<your-api-url>
+   VITE_EPISODES_API=<your-api-url>
+   ```
+
 ## checklist
 
 G Requirements
@@ -86,27 +99,27 @@ G Requirements
 - [x] **Consistent naming in CSS**: Use consistent naming conventions for classes and IDs.
 - [x] **Convert to TypeScript**: Migrate all JavaScript files to TypeScript for improved code quality.
 - [x] **Consistent code quality**: Ensure code standards are followed (using ESLint).
-- [ ] **Mobile view**: Adjust the layout for mobile users.
+- [x] **Mobile view**: Adjust the layout for mobile users.
 - [x] **Language**: Fix language-related issues (e.g., lang attribute in HTML).
-- [ ] **Remove unnecessary logging**: Eliminate redundant console logs.
-- [ ] **Documentation**: Complete the README file and include screenshots.
+- [x] **Remove unnecessary logging**: Eliminate redundant console logs.
+- [x] **Documentation**: Complete the README file and include screenshots.
 - [x] **Accessibility (images)**: Add alt-text and optimize images for better accessibility.
 - [x] **Refactor functions**: Improve code structure by breaking down complex logic.
-- [ ] **Eliminate unused code**: Remove redundant or unused code.
+- [x] **Eliminate unused code**: Remove redundant or unused code.
 - [x] **Remove irrelevant files**: Ensure only necessary files are included in the project.
 
 VG Requirements
 
 - [x] **Right code in the right place**: Restructure files and folders to follow best practices.
-- [ ] **Handle logging effectively**: Implement a logging system to collect and filter logs efficiently.
-- [ ] **Conduct an accessibility review of the site**: Analyze the site using tools like Lighthouse and WCAG standards.
-- [ ] **Utilize Sass features in CSS**: Leverage mixins, variables, and inheritance for optimized styling.
+- [x] **Handle logging effectively**: Implement a logging system to collect and filter logs efficiently.
+- [x] **Conduct an accessibility review of the site**: Analyze the site using tools like Lighthouse and WCAG standards.
+- [x] **Utilize Sass features in CSS**: Leverage mixins, variables, and inheritance for optimized styling.
 - [ ] **Remove unused packages**: Eliminate unnecessary dependencies from package.json.
 - [x] **Handle API errors**: Implement robust error handling for all API calls.
-- [ ] **Conduct a Lighthouse analysis**: Run a Lighthouse report and improve performance, SEO, and accessibility.
-- [ ] **Review development environment**: Document or visualize how the development environment is configured.
-- [ ] **Ensure consistent CSS syntax**: Standardize syntax and formatting based on specific guidelines (e.g., BEM methodology).
-- [ ] **Publish the site on GitHub Pages**: Build and deploy the site using GitHub Pages.
+- [x] **Conduct a Lighthouse analysis**: Run a Lighthouse report and improve performance, SEO, and accessibility.
+- [x] **Review development environment**: Document or visualize how the development environment is configured.
+- [x] **Ensure consistent CSS syntax**: Standardize syntax and formatting based on specific guidelines (e.g., BEM methodology).
+- [x] **Publish the site on GitHub Pages**: Build and deploy the site using GitHub Pages.
 
 ## Screenshots
 
